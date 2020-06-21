@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('travel_package','TravelController');
+Route::resource('travel_package','TravelPackageController');
 Route::resource('gallery','GalleryController');
 Route::resource('transaction','TransactionController');
