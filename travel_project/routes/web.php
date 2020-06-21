@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('travel_package','TravelController');
+Route::resource('gallery','GalleryController');
+Route::resource('transaction','TransactionController');
