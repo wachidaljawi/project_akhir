@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Best Travel</title>
+  <title>@yield('title')</title>
   @include('includes.admin.style')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -28,12 +28,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Starter Page</h1>
+            {{-- <h1 class="m-0 text-dark">Starter Page</h1> --}}
           </div><!-- /.col -->
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
+            <ol class="breadcrumb float-sm-right mr-3">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
+              <li class="breadcrumb-item active')">@yield('title')</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->

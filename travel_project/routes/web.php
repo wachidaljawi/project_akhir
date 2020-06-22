@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::resource('travel_package','TravelPackageController');
 Route::resource('gallery','GalleryController');
 Route::resource('transaction','TransactionController');
+Route::get('/', 'DashboardController@index')
+            ->name('dashboard');

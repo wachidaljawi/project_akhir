@@ -4,8 +4,8 @@
 @section('content')
     <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Paket Travel</h1>
-              <a href="{{ route('travel_package.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <h1 class="h3 mb-0 text-gray-800 ml-3">Paket Travel</h1>
+              <a href="{{ route('travel_package.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mr-3">
                   <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Paket Travel
               </a>
         </div>
@@ -16,16 +16,17 @@
             </div>
         @endif
           <!-- Content Row -->
-          <div class="row">
+          {{-- <div class="row"> --}}
               <div class="card-body">
                   <div class="table-responsive">
-                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <table class="table table-bordered nowrap" id="dataTable">
                           <thead>
                             <tr>
+                                <th></th>
                                 <th>No</th>
                                 <th>Title</th>
                                 <th>Location</th>
-                                <th>Type</th>
+                                <th>Duration</th>
                                 <th>Departure Date</th>
                                 <th>Type</th>
                                 <th>Action</th>
@@ -34,10 +35,11 @@
                           <tbody>
                           @forelse($items as $item)
                                 <tr>
+                                    <td></td>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->location }}</td>
-                                    <td>{{ $item->type }}</td>
+                                    <td>{{ $item->duration }}</td>
                                     <td>{{ $item->departure_date }}</td>
                                     <td>{{ $item->type }}</td>
                                   <td>
@@ -63,6 +65,6 @@
                       </table>
                   </div>
               </div>
-          </div>
+          {{-- </div> --}}
     </div>
 @endsection

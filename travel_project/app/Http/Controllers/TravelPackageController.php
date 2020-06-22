@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Travel_package;
-// use App\Http\Requests\Admin\TravelPackageRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Travel_package;
+use App\Http\Requests\Admin\TravelPackageRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -30,7 +31,7 @@ class TravelPackageController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.travel_package.create');
     }
 
     /**
@@ -39,9 +40,14 @@ class TravelPackageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TravelPackageRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        Travel_package::create($data);
+        session()->flash('pesan',"Data {$data['title']} Berhasil Di Simpan!");
+        return redirect()->route('travel_package.index');
     }
 
     /**
@@ -61,9 +67,13 @@ class TravelPackageController extends Controller
      * @param  \App\Travel_package  $travel_package
      * @return \Illuminate\Http\Response
      */
-    public function edit(Travel_package $travel_package)
+    public function edit($id)
     {
-        //
+        $item = Travel_package::findOrFail($id);
+
+        return view('pages.admin.travel_package.edit',[
+            'item' => $item
+        ]);
     }
 
     /**
@@ -73,9 +83,16 @@ class TravelPackageController extends Controller
      * @param  \App\Travel_package  $travel_package
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Travel_package $travel_package)
+    public function update(TravelPackageRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        $item = Travel_package::findOrFail($id);
+
+        $item->update($data);
+        session()->flash('pesan',"Data {$data['title']} Berhasil Di Ubah!");
+        return redirect()->route('travel_package.index');
     }
 
     /**
@@ -84,8 +101,11 @@ class TravelPackageController extends Controller
      * @param  \App\Travel_package  $travel_package
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Travel_package $travel_package)
+    public function destroy($id)
     {
-        //
+        $item = Travel_package::findorFail($id);
+        $item->delete();
+        session()->flash('pesan',"Data {$item['title']} Berhasil Di Hapus!");
+        return redirect()->route('travel_package.index');
     }
 }
