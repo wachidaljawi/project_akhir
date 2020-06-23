@@ -13,7 +13,7 @@ class GalleryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class GalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'travel_packages_id' => 'required|integer|exists:travel_packages,id',
+            'image' => 'required|image',
         ];
     }
 }

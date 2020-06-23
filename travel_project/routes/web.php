@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', 'HomeController@index')
+    ->name('home.index');
 
 Route::resource('travel_package','TravelPackageController');
 Route::resource('gallery','GalleryController');
