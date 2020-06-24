@@ -21,11 +21,10 @@ Route::get('/', 'HomeController@index')
 
 Route::prefix('admin')->namespace('Admin')->middleware(['auth','admin'])->group(function(){
     Route::resource('travel_package','TravelPackageController');
-    
-    Route::resource('transaction','TransactionController');
     Route::get('/', 'DashboardController@index')
                 ->name('dashboard');
+    Route::resource('gallery','GalleryController');
+    Route::resource('transaction','TransactionController');
 });
-Route::resource('gallery','GalleryController');
 
 Auth::routes();

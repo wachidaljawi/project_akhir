@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            {{-- <h1 class="m-0 text-dark">Starter Page</h1> --}}
+            <h1 class="m-0 text-dark ml-3">@yield('title')</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right mr-3">
@@ -63,6 +63,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('includes.admin.footer')
 </div>
 <!-- ./wrapper -->
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-footer">
+          <form action="{{  url('logout') }}" method="POST">
+              @csrf
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" type="submit">Logout</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- REQUIRED SCRIPTS -->
 @include('includes.admin.script')
