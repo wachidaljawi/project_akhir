@@ -23,7 +23,7 @@ class GalleryController extends Controller
         return view('pages.admin.gallery.index',[
             'items' => $items,
         ]);
-        session()->flash('pesan',"Data Berhasil Di Simpan!");
+        
     }
 
     /**

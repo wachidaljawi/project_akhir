@@ -7,6 +7,7 @@ use App\Models\Travel_package;
 use App\Http\Requests\Admin\TravelPackageRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Alert;
 
 class TravelPackageController extends Controller
 {
@@ -46,7 +47,9 @@ class TravelPackageController extends Controller
         $data['slug'] = Str::slug($request->title);
 
         Travel_package::create($data);
-        session()->flash('pesan',"Data {$data['title']} Berhasil Di Simpan!");
+        Alert::success('Data berhasil disimpan', 'Success Message');
+
+        // session()->flash('pesan',"Data {$data['title']} Berhasil Di Simpan!");
         return redirect()->route('travel_package.index');
     }
 
