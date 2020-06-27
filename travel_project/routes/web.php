@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', 'HomeController@index')
-    ->name('home.index');
+    ->name('home');
 
 Route::prefix('admin')->namespace('Admin')->middleware(['auth','admin'])->group(function(){
     Route::resource('travel_package','TravelPackageController');

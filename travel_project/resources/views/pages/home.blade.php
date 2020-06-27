@@ -1,23 +1,21 @@
 @extends('layouts.app')
+@section('title','Best Travel')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+{{-- Header --}}
+<header class="text-center">
+    <h1>Explore The Beautiful World
+        <br>
+        As Easy One Click
+    </h1>
+    <p class="mt-3">
+        You will see beautiful
+        <br>
+        moment you never see before
+    </p>
+    <a href="#popular" class="btn btn-get-started px-4 mt-4">
+        Get started
+    </a>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</header>
 @endsection
