@@ -53,7 +53,7 @@ class GalleryController extends Controller
         );
 
         Gallery::create($data);
-        session()->flash('pesan',"Data Berhasil Disimpan!");
+        Alert::success('Data berhasil disimpan', 'Success Message');
         return redirect()->route('gallery.index');
     }
 
@@ -106,7 +106,7 @@ class GalleryController extends Controller
         // $item = Gallery::findOrFail($id);
 
         $tampung->update($data);
-        session()->flash('pesan',"Data Berhasil Di Edit!");
+        Alert::success('Data berhasil diupdate', 'Success Message');
         return redirect()->route('gallery.index');
     }
 
@@ -120,7 +120,7 @@ class GalleryController extends Controller
     {
         $item = Gallery::findorFail($id);
         $item->delete();
-        session()->flash('pesan',"Data Berhasil Di Hapus!");
+        Alert::success('Data berhasil dihapus!', 'Success Message');
         return redirect()->route('gallery.index');
     }
 }

@@ -94,7 +94,8 @@ class TravelPackageController extends Controller
         $item = Travel_package::findOrFail($id);
 
         $item->update($data);
-        session()->flash('pesan',"Data {$data['title']} Berhasil Di Ubah!");
+        Alert::success('Data berhasil diupdate', 'Success Message');
+        // session()->flash('pesan',"Data {$data['title']} Berhasil Di Ubah!");
         return redirect()->route('travel_package.index');
     }
 
@@ -108,7 +109,7 @@ class TravelPackageController extends Controller
     {
         $item = Travel_package::findorFail($id);
         $item->delete();
-        session()->flash('pesan',"Data {$item['title']} Berhasil Di Hapus!");
+        Alert::success('Data berhasil dihapus', 'Success Message');
         return redirect()->route('travel_package.index');
     }
 }
