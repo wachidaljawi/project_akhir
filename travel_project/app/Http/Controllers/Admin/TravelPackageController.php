@@ -72,10 +72,10 @@ class TravelPackageController extends Controller
      */
     public function edit($id)
     {
-        $item = Travel_package::findOrFail($id);
+        $items = Travel_package::findOrFail($id);
 
         return view('pages.admin.travel_package.edit',[
-            'item' => $item
+            'items' => $items
         ]);
     }
 
@@ -91,10 +91,10 @@ class TravelPackageController extends Controller
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
 
-        $item = Travel_package::findOrFail($id);
+        $items = Travel_package::findOrFail($id);
 
-        $item->update($data);
-        Alert::success('Data berhasil diupdate', 'Success Message');
+        $items->update($data);
+        Alert::info('Data berhasil diupdate', 'Success Message');
         // session()->flash('pesan',"Data {$data['title']} Berhasil Di Ubah!");
         return redirect()->route('travel_package.index');
     }
@@ -107,9 +107,9 @@ class TravelPackageController extends Controller
      */
     public function destroy($id)
     {
-        $item = Travel_package::findorFail($id);
-        $item->delete();
-        Alert::success('Data berhasil dihapus', 'Success Message');
+        $items = Travel_package::findorFail($id);
+        $items->delete();
+        Alert::warning('Data berhasil dihapus', 'Success Message');
         return redirect()->route('travel_package.index');
     }
 }

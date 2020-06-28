@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use App\Models\Travel_package;
 use App\Http\Requests\Admin\GalleryRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Alert;
 
 class GalleryController extends Controller
 {
@@ -76,11 +78,11 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        $item = Gallery::findOrFail($id);
+        $items = Gallery::findOrFail($id);
         $travel_packages = Travel_package::all();
 
         return view('pages.admin.gallery.edit',[
-            'item' => $item,
+            'items' => $items,
             'travel_packages' => $travel_packages
         ]);
     }
@@ -106,7 +108,7 @@ class GalleryController extends Controller
         // $item = Gallery::findOrFail($id);
 
         $tampung->update($data);
-        Alert::success('Data berhasil diupdate', 'Success Message');
+        Alert::info('Data berhasil diupdate', 'Success Message');
         return redirect()->route('gallery.index');
     }
 
@@ -118,9 +120,10 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        $item = Gallery::findorFail($id);
-        $item->delete();
-        Alert::success('Data berhasil dihapus!', 'Success Message');
+        $items = Gallery::findorFail($id);
+        Storage::delete('public/'.$items->image);
+        $items->delete();
+        Alert::warning('Data berhasil dihapus!', 'Success Message');
         return redirect()->route('gallery.index');
     }
 }

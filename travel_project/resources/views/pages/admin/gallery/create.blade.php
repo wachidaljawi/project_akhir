@@ -4,11 +4,6 @@
 @section('content')
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Tambah Gallery</h1>
-    </div>
-
     <!-- Content Row -->
       @if ($errors->any())
           <div class="alert alert-danger">
@@ -38,9 +33,10 @@
                       <label for="image">Image</label>
                       <input type="file" class="form-control" name="image" placeholder="Image" >
                   </div>
-                  <button type="submit" class="btn btn-primary btn-block">
+                  <button type="submit" class="btn btn-primary">
                       Simpan
                   </button>
+                  <a href="/admin/gallery" class="btn btn-outline-warning">Kembali</a>
               </form>
           </div>
       </div>

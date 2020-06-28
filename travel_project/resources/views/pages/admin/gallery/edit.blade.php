@@ -21,7 +21,7 @@
         @endif
         <div class="card shadow">
           <div class="card-body">
-              <form action="{{ route('gallery.update', $item->id) }}" method="post" enctype="multipart/form-data">
+              <form action="{{ route('gallery.update', $items->id) }}" method="post" enctype="multipart/form-data">
                   @method('PUT')
                   @csrf
                   <div class="form-group">
@@ -29,7 +29,7 @@
                       <select name="travel_packages_id" required class="form-control">
                           {{-- <option value="{{ $item->travel_packages_id }}">Jangan Ubah</option> --}}
                           @foreach($travel_packages as $travel_package)
-                            <option value="{{ $travel_package->id }}" {{old('travel_packages_id') ?? $item->travel_packages_id == $travel_package->id ? 'selected' : ''}}>
+                            <option value="{{ $travel_package->id }}" {{old('travel_packages_id') ?? $items->travel_packages_id == $travel_package->id ? 'selected' : ''}}>
                                 {{ $travel_package->title }}
                             </option>
                           @endforeach
@@ -39,9 +39,10 @@
                       <label for="image">Image</label>
                       <input type="file" class="form-control" name="image" placeholder="Image" >
                   </div>
-                  <button type="submit" class="btn btn-primary btn-block">
+                  <button type="submit" class="btn btn-primary">
                       Ubah
                   </button>
+                  <a href="/admin/gallery" class="btn btn-outline-warning">Kembali</a>
               </form>
           </div>
         </div>
