@@ -26,7 +26,7 @@ class CreateTravelPackagesTable extends Migration
             $table->string('duration');
             $table->string('type');
             $table->integer('price');
-            $table->softDeletes();
+            // $table->softDeletes();
             $table->timestamps();
         });
     }

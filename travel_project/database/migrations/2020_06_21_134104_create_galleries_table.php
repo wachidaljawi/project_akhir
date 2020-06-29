@@ -17,8 +17,8 @@ class CreateGalleriesTable extends Migration
             $table->id();
             $table->bigInteger('travel_packages_id')->unsigned();
             $table->text('image');
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('travel_packages_id')->references('id')->on('travel_packages')->onDelete('cascade')->onUpdate('cascade');
             
         });
