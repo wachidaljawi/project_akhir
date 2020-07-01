@@ -14,7 +14,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        $items = Transaction::with(['detail','travel_package','user'])->get();
+
+        return view('pages.admin.transaction.index', compact('items'));
     }
 
     /**
@@ -33,9 +35,11 @@ class TransactionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TransactionRequest $request)
     {
-        //
+        $data = $request->all();
+        Transaction::create($data);
+        return redirect()->route('transaction.index');
     }
 
     /**
@@ -44,9 +48,11 @@ class TransactionController extends Controller
      * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function show(Transaction $transaction)
+    public function show($id)
     {
-        //
+        $items = Transaction::with(['detail','travel_package','user'])->findOrFail($id);
+
+        return view('pages.admin.transaction.detail', compact('items'));
     }
 
     /**
@@ -55,9 +61,10 @@ class TransactionController extends Controller
      * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaction $transaction)
+    public function edit($id)
     {
-        //
+        $items = Transaction::findorFail($id);
+        return view('pages.admin.transaction.edit',compact('items'));
     }
 
     /**
@@ -67,9 +74,12 @@ class TransactionController extends Controller
      * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transaction $transaction)
+    public function update(TransactionRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $items = Transaction::findOrFail($id);
+        $items->update($data);
+        return redirect()->route('transaction.index');
     }
 
     /**
@@ -78,8 +88,11 @@ class TransactionController extends Controller
      * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaction $transaction)
+    public function destroy($id)
     {
-        //
+        $items = Transaction::findorFail($id);
+        $items->delete();
+
+        return redirect()->route('transaction.index');
     }
 }
