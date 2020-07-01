@@ -13,7 +13,7 @@ class TransactionRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class TransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'transaction_status' => 'required|string|in:PENDING,SUCCESS,CANCEL,FAILED'
         ];
     }
 }
