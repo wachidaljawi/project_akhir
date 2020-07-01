@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   font-family: 'Assistant', sans-serif;
   color: #071C4D;
 }
@@ -237,8 +237,16 @@ header .btn-get-started:hover {
   color: #C3C3C3;
 }
 
+.section-footer {
+ background-color: #071C4D;
+}
+
+.section-footer h5 {
+  color: #FAFAFA;
+}
+
 .section-footer a {
-  color: #071C4D;
+  color: #FAFAFA;
 }
 
 .section-details-header {

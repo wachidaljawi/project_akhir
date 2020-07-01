@@ -1,4 +1,4 @@
-<footer class="section-footer mt-5 mb-4 border-top">
+<footer class="section-footer mt-5 border-top">
     <div class="container pt-5 pb-5">
       <div class="row justify-content-center">
         <div class="col-12">
@@ -42,11 +42,9 @@
       </div>
     </div>
     <div class="container-fluid">
-      <div
-        class="row border-top justify-content-center align-items-center pt-4"
-      >
-        <div class="col-auto text-gray-500 font-weight-light">
-          2020 Copyright Best Travel • All rights reserved • Made in Jakarta
+      <div class="row border-top justify-content-center align-items-center pt-4">
+        <div class="col-auto text-white-500 font-weight-light">
+          <h5 class="footer-bottom mb-4">2020 Copyright Best Travel • All rights reserved • Made in Jakarta</h5>
         </div>
       </div>
     </div>

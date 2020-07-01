@@ -16,9 +16,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $items = Travel_package::with(['galleries'])->get();
+        $items = Travel_package::with(['galleries'])->orderBy('created_at','Desc')->take(4)->get();
+        $data = Travel_package::orderBy('created_at','Desc')->take(3)->get();
         return view('pages.home',[
-            'items' => $items
+            'items' => $items, 'data' => $data
         ]);
     }
 }

@@ -61,17 +61,14 @@
             <div class="section-popular-travel row justify-content-center">
             @foreach($items as $item)
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div
-                    class="card-travel text-center d-flex flex-column"
-                    style="background-image: url('{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}');"
-                    >
-                    <div class="travel-country">{{ $item->location }}</div>
-                    <div class="travel-location">{{ $item->title }}</div>
-                    <div class="travel-button mt-auto">
+                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}');">
+                        <div class="travel-country">{{ $item->location }}</div>
+                        <div class="travel-location">{{ $item->title }}</div>
+                        <div class="travel-button mt-auto">
                         <a href="{{ route('detail', $item->slug) }}" class="btn btn-travel-details px-4">
                         View Details
                         </a>
-                    </div>
+                        </div>
                     </div>
                 </div>
             @endforeach
@@ -119,27 +116,30 @@
     <section class="section section-testimonial-content" id="testimonialContent">
         <div class="container">
             <div class="section-popular-travel row justify-content-center">
-            <div class="col-sm-6 col-md-6 col-lg-4">
-                <div class="card card-testimonial text-center">
-                <div class="testiominal-content">
-                    <img
-                    src="frontend/images/testimonial-1.png"
-                    alt="User"
-                    class="mb-4 rounded-circle"
-                    />
-                    <h3 class="mb-4">Angga Risky</h3>
-                    <p class="testimonial">
-                    “ It was glorious and I could not stop to say wohooo for
-                    every single moment Dankeeeeee “
+                @foreach ($data as $item)
+                    
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <div class="card card-testimonial text-center">
+                    <div class="testiominal-content">
+                        <img
+                        src="frontend/images/testimonial-2.png"
+                        alt="User"
+                        class="mb-4 rounded-circle"
+                        />
+                        <h3 class="mb-4">Shayna</h3>
+                        <p class="testimonial">
+                        “ It was glorious and I could not stop to say wohooo for
+                        every single moment Dankeeeeee “
+                        </p>
+                    </div>
+                    <hr />
+                    <p class="trip-to mt-2">
+                        Trip to {{ $item->title }}
                     </p>
+                    </div>
                 </div>
-                <hr />
-                <p class="trip-to mt-2">
-                    Trip to Ubud
-                </p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4">
+                @endforeach
+            {{-- <div class="col-sm-6 col-md-6 col-lg-4">
                 <div class="card card-testimonial text-center">
                 <div class="testiominal-content">
                     <img
@@ -178,7 +178,7 @@
                     Trip to Karimun Jawa
                 </p>
                 </div>
-            </div>
+            </div> --}}
             </div>
             <div class="row">
             <div class="col-12 text-center">
