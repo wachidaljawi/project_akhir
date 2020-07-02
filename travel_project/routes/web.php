@@ -45,4 +45,4 @@ Route::prefix('admin')->namespace('Admin')->middleware(['auth','admin'])->group(
     Route::resource('transaction','TransactionController');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);

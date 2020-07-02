@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Detail Travel')
 @section('content')
-<main>
+  <main>
     <section class="section-details-header"></section>
     <section class="section-details-content">
       <div class="container">
@@ -51,7 +51,7 @@
                     </div>
               @endif
               <h2>Tentang Wisata</h2>
-              {!! $item->about !!}
+              <p class="text-justify">{{  $item->about  }}</p>
               <div class="features row">
                 <div class="col-md-4">
                   <img
@@ -72,8 +72,8 @@
                       class="features-image"
                     />
                     <div class="description">
-                      <h3>Language</h3>
-                      <p>{{ $item->language }}</p>
+                      <h3>Location</h3>
+                      <p>{{ $item->location }}</p>
                     </div>
                   </div>
                 </div>
@@ -124,7 +124,7 @@
                 <tr>
                   <th width="50%">Date of Departure</th>
                   <td width="50%" class="text-right">
-                      {{ \Carbon\Carbon::create($item->date_of_departure)->format('F n, Y') }}
+                      {{ \Carbon\Carbon::create($item->departure_date)->format('F n, Y') }}
                   </td>
                 </tr>
                 <tr>

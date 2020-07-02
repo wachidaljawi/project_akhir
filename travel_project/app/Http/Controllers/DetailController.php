@@ -14,7 +14,7 @@ class DetailController extends Controller
      */
     public function index(Request $request, $slug)
     {
-        $item = TravelPackage::with(['galleries'])->where('slug', $slug)->firstOrFail();
+        $item = Travel_package::with(['galleries'])->where('slug', $slug)->firstOrFail();
         return view('pages.detail',[
             'item' => $item
         ]);
