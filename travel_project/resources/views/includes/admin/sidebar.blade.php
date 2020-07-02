@@ -40,14 +40,14 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @yield('gallery')" href="{{ route('gallery.index') }}">
+                <a class="nav-link @yield('Gallery')" href="{{ route('gallery.index') }}">
                   <i class="nav-icon fas fa-fw fa-images"></i>
                   <p>Galeri Travel</p>
                 </a>
             </li>
             
               <li class="nav-item">
-                <a class="nav-link @yield('transaction')" href="{{ route('transaction.index') }}">
+                <a class="nav-link @yield('Transaction')" href="{{ route('transaction.index') }}">
                   <i class="nav-icon fas fa-fw fa-dollar-sign"></i>
                   <p>Transaksi</p>
                 </a>

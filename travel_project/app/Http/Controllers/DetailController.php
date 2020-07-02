@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction_details;
+use App\Models\Travel_package;
 use Illuminate\Http\Request;
 
-class TransactionDetailsController extends Controller
+class DetailController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $slug)
     {
-        //
+        $item = TravelPackage::with(['galleries'])->where('slug', $slug)->firstOrFail();
+        return view('pages.detail',[
+            'item' => $item
+        ]);
     }
 
     /**
