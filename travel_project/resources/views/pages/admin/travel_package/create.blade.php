@@ -66,6 +66,7 @@
                     <button type="submit" class="btn btn-primary btn-block">
                         Simpan
                     </button>
+                    <a href="/admin/travel_package" class="btn btn-outline-warning">Kembali</a>
                 </form>
             </div>
         </div>

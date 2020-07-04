@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/detail/{slug}','DetailController@index')->name('detail');
+
 Route::post('/checkout/{id}', 'CheckoutController@process')
     ->name('checkout_process')
     ->middleware(['auth','verified']);

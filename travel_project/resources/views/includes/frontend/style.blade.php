@@ -8,3 +8,4 @@
 />
 <link rel="stylesheet" href="{{ url('frontend/styles/main.css') }}" />
 <link rel="stylesheet" href="{{ url('frontend/libraries/xzoom/xzoom.css') }}" />
+<link rel="stylesheet" href="{{ url('frontend/libraries/gijgo/css/gijgo.min.css') }}" />
