@@ -139,7 +139,7 @@
                 <h3 class="mt-2 mb-0">Note</h3>
                 <p class="disclaimer mb-0">
                   You are only able to invite member that has registered in
-                  Nomads.
+                  Best Travel.
                 </p>
               </div>
             </div>
@@ -195,7 +195,7 @@
                     class="bank-image"
                   />
                   <div class="description">
-                    <h3>PT Nomads ID</h3>
+                    <h3>PT Best Travel</h3>
                     <p>
                       0881 8829 8800
                       <br />
@@ -211,7 +211,7 @@
                     class="bank-image"
                   />
                   <div class="description">
-                    <h3>PT Nomads ID</h3>
+                    <h3>PT Best Travel</h3>
                     <p>
                       0899 8501 7888
                       <br />
