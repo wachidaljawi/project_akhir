@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title','Best Travel')
+@section('Home','active')
 
 @section('content')
 {{-- Header --}}
@@ -61,7 +62,7 @@
             <div class="section-popular-travel row justify-content-center">
             @foreach($items as $item)
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}');">
+                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}');" data-aos="fade-zoom-in" data-aos-duration="2000">
                         <div class="travel-country">{{ $item->location }}</div>
                         <div class="travel-location">{{ $item->title }}</div>
                         <div class="travel-button mt-auto">
@@ -91,7 +92,7 @@
                 <img
                 src="frontend/images/partner.png"
                 alt="Logo Partner"
-                class="img-partner"
+                class="img-partner" data-aos="flip-down" data-aos-duration="2000"
                 />
             </div>
             </div>
@@ -119,7 +120,7 @@
                 @foreach ($data as $item)
                     
                 <div class="col-sm-6 col-md-6 col-lg-4">
-                    <div class="card card-testimonial text-center">
+                    <div class="card card-testimonial text-center" data-aos="fade-down-left" data-aos-duration="2000">
                     <div class="testiominal-content">
                         <img
                         src="frontend/images/testimonial-2.png"

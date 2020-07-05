@@ -3,6 +3,7 @@
 <script src="{{ url('frontend/libraries/retina/retina.min.js') }}"></script>
 <script src="{{ url('frontend/libraries/xzoom/xzoom.min.js') }}"></script>
 <script src="{{ url('frontend/libraries/gijgo/js/gijgo.min.js') }}"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     $(document).ready(function() {
         $('.xzoom, .xzoom-gallery').xzoom({
@@ -12,6 +13,7 @@
           Xoffset: 15
         });
     });
+
     $(document).ready(function() {
       $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',
@@ -21,4 +23,21 @@
         }
       });
     });
+
+    var $window = $(window);
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $('#top-nav').fadeIn();
+        } else {
+            $('#top-nav').fadeOut();
+        }
+    });
+
+    $('#top-nav').hide().click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 2000);
+        return false;
+    });
+    AOS.init();
 </script>

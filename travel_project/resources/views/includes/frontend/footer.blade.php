@@ -48,4 +48,7 @@
         </div>
       </div>
     </div>
+    <a href="#top" id="top-nav">
+      <img src="{{asset ('frontend/images/scroll.png') }}" alt="top">
+    </a>
   </footer>
