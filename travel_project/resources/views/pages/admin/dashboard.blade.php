@@ -11,7 +11,7 @@
                 <div class="info-box-content">
                   <span class="info-box-text">Paket Travel</span>
                   <span class="info-box-number">
-                    10
+                    {{ $travel_package }}
                   </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -25,7 +25,7 @@
         
                 <div class="info-box-content">
                   <span class="info-box-text">Transaksi</span>
-                  <span class="info-box-number">14</span>
+                  <span class="info-box-number">{{ $transaction }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -42,7 +42,7 @@
         
                 <div class="info-box-content">
                   <span class="info-box-text">Pending</span>
-                  <span class="info-box-number">8</span>
+                  <span class="info-box-number">{{ $transaction_pending }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -55,7 +55,7 @@
         
                 <div class="info-box-content">
                   <span class="info-box-text">Sukses</span>
-                  <span class="info-box-number">2,000</span>
+                  <span class="info-box-number">{{ $transaction_success }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
