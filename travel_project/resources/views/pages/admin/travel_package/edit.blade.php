@@ -41,7 +41,7 @@
                   </div>
                   <div class="form-group">
                       <label for="about">About</label>
-                      <textarea name="about" rows="10" class="d-block w-100 form-control">{{ $items->about }}</textarea>
+                      <textarea name="about" rows="10" class="form-control" id="editor">{{ $items->about }}</textarea>
                   </div>
                   <div class="form-group">
                       <label for="featured_event">Featured Event</label>

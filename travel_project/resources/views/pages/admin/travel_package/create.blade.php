@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label for="about">About</label>
-                        <textarea name="about" rows="10" class="d-block w-100 form-control">{{ old('about') }}</textarea>
+                        <textarea name="about" rows="10" class="form-control" id="editor">{{ old('about') }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="featured_event">Featured Event</label>
@@ -63,7 +63,7 @@
                         <label for="price">Price</label>
                         <input type="number" class="form-control" name="price" placeholder="Price" value="{{ old('price') }}">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">
+                    <button type="submit" class="btn btn-primary">
                         Simpan
                     </button>
                     <a href="/admin/travel_package" class="btn btn-outline-warning">Kembali</a>
